@@ -5,6 +5,7 @@ import { Row } from "react-bootstrap";
 import { BASE_URL } from "../../constants/api";
 import ToppingOption from "./ToppingOption";
 import AlertBanner from "../common/AlertBanner";
+import { pricePerItem } from "../../constants";
 
 const Options = ({ optionType }) => {
   const [items, setItesm] = useState([]);
@@ -27,11 +28,19 @@ const Options = ({ optionType }) => {
 
   const ItemCopmponent = optionType === "scoops" ? ScoopOption : ToppingOption;
 
+  const titlte = optionType[0].toUpperCase() + optionType.slice(1).toLowerCase();
+
   const optionItems = items.map((item) => (
     <ItemCopmponent key={item.name} name={item.name} imagePath={item.imagePath} />
   ));
 
-  return <Row>{optionItems}</Row>;
+  return (
+    <>
+      <h2>{titlte}</h2>
+      <p>{pricePerItem[optionType]} each</p>
+      <Row>{optionItems}</Row>
+    </>
+  );
 };
 
 export default Options;
