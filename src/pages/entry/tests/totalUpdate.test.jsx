@@ -1,4 +1,4 @@
-import { render, screen } from "../../../test-utils/testing-library-utils";
+import { findByRole, render, screen } from "../../../test-utils/testing-library-utils";
 import userEvent from "@testing-library/user-event";
 import Options from "../Options";
 
@@ -19,4 +19,23 @@ test("update scoop subtotal when scoops change", async () => {
   await user.type(chocolateInput, "2");
 
   expect(scoopsSubtotal).toHaveTextContent("6.00");
+});
+
+test("update toppings subtotal when topping change", async () => {
+  render(<Options optionType="toppings" />);
+  const user = userEvent.setup();
+  const toppingsSubTotal = screen.getByText("Toppings total: $", { exact: false });
+  expect(toppingsSubTotal).toHaveTextContent("0.00");
+
+  const cherriesInput = await screen.findByRole("checkbox", { name: "Cherries" });
+  await user.click(cherriesInput);
+
+  expect(toppingsSubTotal).toHaveTextContent("1.50");
+
+  const MandMsInput = screen.getByRole("checkbox", { name: "M&Ms" });
+  await user.click(MandMsInput);
+  expect(toppingsSubTotal).toHaveTextContent("3.00");
+
+  await user.click(MandMsInput);
+  expect(toppingsSubTotal).toHaveTextContent("1.50");
 });
