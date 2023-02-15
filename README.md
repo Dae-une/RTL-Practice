@@ -21,3 +21,13 @@ QueryType
 - AltText : 이미지
 - Text : 보이는 요소
 - Form elmnets : PlaceholderText,LabelText,DisplayValue
+
+# UserEvent
+[RTL 공식문서](https://testing-library.com/docs/user-event/intro)
+
+userEvent는 프로미스를 리턴한다.
+사용 전 setup후,
+사용 할때 앞에 await 붙여주기
+
+# Wrapper
+<img width="792" alt="스크린샷 2023-02-16 오전 1 13 06" src="https://user-images.githubusercontent.com/104764474/219085757-384c2ae5-35da-44ed-8826-fbf2309b45ea.png">
