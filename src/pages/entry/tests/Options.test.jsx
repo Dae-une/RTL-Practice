@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "../../../test-utils/testing-library-utils";
 import Options from "../Options";
 
 test("서버로부터 받아온 스쿱 옵션의 이미지가 보여져야 한다.", async () => {
