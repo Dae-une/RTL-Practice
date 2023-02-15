@@ -2,8 +2,8 @@ React Tesing Library 공부용
 
 # screen Query Methods
 
+[RTL 공식문서](https://testing-library.com/docs/queries/about/)
 'coomand'[all]By'QueryType'
-
 command
 
 - get: 돔 안에 요소가 있을 때
