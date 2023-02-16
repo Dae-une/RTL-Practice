@@ -10,7 +10,7 @@ test("스쿱 및 토핑 라우트 에러 핸들링", async () => {
     rest.get(`${BASE_URL}/toppings`, (req, res, ctx) => res(ctx.status(500)))
   );
 
-  render(<OrderEntry />);
+  render(<OrderEntry setOrderPhase={jest.fn()} />);
   const alerts = await screen.findAllByRole("alert");
 
   expect(alerts).toHaveLength(2);
