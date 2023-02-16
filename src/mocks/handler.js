@@ -20,4 +20,8 @@ export const handler = [
       ])
     );
   }),
+
+  rest.post(`${BASE_URL}/order`, (req, res, ctx) => {
+    return res(ctx.json({ orderNumber: 1234 }));
+  }),
 ];
