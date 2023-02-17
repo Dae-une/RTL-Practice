@@ -32,6 +32,8 @@ userEvent는 프로미스를 리턴한다.
 # Wrapper
 <img width="792" alt="스크린샷 2023-02-16 오전 1 13 06" src="https://user-images.githubusercontent.com/104764474/219085757-384c2ae5-35da-44ed-8826-fbf2309b45ea.png">
 
+# role
+ [MDN role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles)
 
 # 테스트 코드 짜기 전에...
 
